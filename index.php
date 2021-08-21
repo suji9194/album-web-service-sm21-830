@@ -94,15 +94,11 @@ myData = '<pre>' + myData + '</pre>';
 	});
 	
 
-	
+
 	
 	// in this way we can see all of the data on the page 
 
-	let myData = JSON.stringify(data,null,4);
-	myData = '<pre>' + myData + '</pre>';
-	$("#output").html(myData);
 	
-
 
 
 	// this works, but the text is all bunched up
