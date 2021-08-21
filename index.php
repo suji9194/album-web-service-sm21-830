@@ -63,7 +63,7 @@ function bondJSON(data) {
 
 	$('#films').html('');
 
-	/*
+	
 	$.each(data.films,function(i,item){
 		let str = bondTemplate(item);
 
@@ -71,7 +71,7 @@ function bondJSON(data) {
 		
 		
 	});
-	*/
+	
 
 	
 	
@@ -89,23 +89,27 @@ function bondJSON(data) {
 
 }
 
-function bondTemplate(film){
+function bondTemplate(album){
 	return `
 			<div class="film">
-				<b>Film:</b> ${film.Film}<br />
-				<b>Title: </b>${film.Title}<br />
-				<b>Year: </b> ${film.Year}<br />
-				<b>Director: </b> ${film.Director}<br />
-				<b>Producers: </b> ${film.Producers}<br />
-				<b>Writers: </b> ${film.Writers}<br />
-				<b>Composer: </b> ${film.Composer}<br />
-				<b>Bond: </b> ${film.Bond}<br />
-				<b>Budget: </b> ${film.Budget}<br />
-				<b>Box Office: </b> ${film.BoxOffice}<br />
-				<div class="pic"><img src="thumbnails/${film.Image}" /></div>
+				<b>Year:</b> ${album.Year}<br />
+				<b>Artist: </b>${album.Artist}<br />
+				<b>Title: </b> ${album.Title}<br />
+				<b>Sales: </b> ${album.Sales}<br />
+				<b>Genre: </b> ${album.Genre}<br />
+				<div class="pic"><img src="thumbnails/${album.Image}" /></div>
 			</div>
 	`;
 }
+/*
+"Year":1996,
+				"Artist":"Tupac",
+				"Title":"All Eyes On Me,"
+				"Sales":5000000,
+				"Genre":"Rap",
+				"Image":"tupac.jpg"
+		
+*/
 </script>
 </head>
 	<body>

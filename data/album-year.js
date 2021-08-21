@@ -4,7 +4,7 @@
 			  {
 				"Year":1996,
 				"Artist":"Tupac",
-				"Title":"All Eyes On Me,"
+				"Title":"All Eyes On Me",
 				"Sales":5000000,
 				"Genre":"Rap",
 				"Image":"tupac.jpg"
