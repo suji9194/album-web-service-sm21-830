@@ -22,6 +22,21 @@
 <script src="https://code.jquery.com/jquery-latest.js" type="text/javascript"></script>
 
 <script type="text/javascript">
+
+function serverSetup(server,cat){
+	server = server.toLowerCase();
+	let url ='';
+	if(Server == "php"){//use web service
+		url = "api.php?cat=" + cat;
+	}else{//server is HTML only -simulate web service
+		if(cat == "box"){//box office
+			url = "data/bond-box-office.js";
+		}else{//year
+			url = "data.bond-year.js";
+		}
+	}
+	return url;
+}
 $(document).ready(function() {  
 
 	$('.category').click(function(e){
@@ -32,21 +47,25 @@ $(document).ready(function() {
 });	
 
 
+let url- service-Setup("html,cat");
+
+
 function loadAJAX(cat)
 {
-	//AJAX connection will go here
-    //alert('cat is: ' + cat);
-
 	$.ajax({
 		type:"GET",
 		dataType: "json",
 		url: "api.php?cat=" + cat,
 		success:bondJSON
+		error:function(xhr.status,error){
+			let errorMessage= xhr.status +':' + xhr.statusText
+			alert('Error-'+ errorMessage);
+		}
 	});
-
-
 }
-    
+   
+
+
 function toConsole(data)
 {//return data to console for JSON examination
 	console.log(data); //to view,use Chrome console, ctrl + shift + j
@@ -54,11 +73,13 @@ function toConsole(data)
 
 function bondJSON(data){
 //JSON processing data goes here
-
-	//using this i can see the object in the console
 	console.log(data);
 
-	// this defines the type of info returned 
+let myData = JOSN.stringify(data,null,4);
+myData = '<pre>' + myData + '</pre>';
+	$("#output").html(myData);
+
+
 	$('#filmtitle').html(data.title);
 
 	$('#films').html('');
@@ -109,6 +130,24 @@ function bondTemplate(album){
 				"Genre":"Rap",
 				"Image":"tupac.jpg"
 		
+Items to fix/do to turn in this assignment:
+
+1) fix the name of the Image, to match the album tupac.jpg becomes
+all -eyes-on-me.jpg
+
+
+2) Find small pics of each of the albums-put them in the thumbnails folder 
+
+3) Create the albums-genre.js file, just we created the other file 
+
+4) To turn this in, link your repo & repl web page on your staging area, 
+and submit the staging area (repl must be running!)
+
+
+
+
+
+
 */
 </script>
 </head>
