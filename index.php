@@ -52,7 +52,7 @@ function toConsole(data)
 	console.log(data); //to view,use Chrome console, ctrl + shift + j
 }
 
-function bondJSON(data) {
+function bondJSON(data){
 //JSON processing data goes here
 
 	//using this i can see the object in the console
@@ -64,7 +64,7 @@ function bondJSON(data) {
 	$('#films').html('');
 
 	
-	$.each(data.films,function(i,item){
+	$.each(data.albums,function(i,item){
 		let str = bondTemplate(item);
 
 		$('<div></div>').html(str).appendTo('#films');
